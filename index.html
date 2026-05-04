@@ -23,8 +23,6 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden}
 input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
-
-/* SETUP */
 #setup-screen{position:fixed;inset:0;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;padding:28px;z-index:100}
 .logo{text-align:center;margin-bottom:32px}
 .logo h1{font-size:34px;font-weight:700;letter-spacing:-1.5px}
@@ -47,8 +45,6 @@ input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
 .btn-go{width:100%;padding:14px;background:var(--accent);color:#0f0f0f;border:none;border-radius:var(--r-sm);font-size:15px;font-weight:700;cursor:pointer}
 .btn-go:disabled{opacity:.35;cursor:default}
 .setup-note{font-size:11px;color:var(--faint);text-align:center;margin-top:14px;line-height:1.6;max-width:380px}
-
-/* APP */
 #app{display:none;flex-direction:column;height:100dvh;height:100vh}
 #app.on{display:flex}
 .header{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border);flex-shrink:0}
@@ -62,16 +58,12 @@ input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
 .icon-btn:active{border-color:var(--accent)}
 .spinning{animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
 .tabs-bar{display:flex;overflow-x:auto;border-bottom:1px solid var(--border);flex-shrink:0;scrollbar-width:none}
 .tabs-bar::-webkit-scrollbar{display:none}
 .tab-btn{flex-shrink:0;padding:11px 14px;border:none;background:none;color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;font-family:var(--font)}
 .tab-btn.on{color:var(--text);border-bottom-color:var(--accent)}
-
 .content{flex:1;overflow-y:auto;padding:16px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 .panel{display:none}.panel.on{display:block}
-
-/* CARD HERO */
 .card-hero{border-radius:var(--r);padding:18px 20px;margin-bottom:16px;position:relative;overflow:hidden}
 .card-hero.vg{background:linear-gradient(135deg,#152040,#0a1228)}
 .card-hero.mg{background:linear-gradient(135deg,#3a1520,#1f0b10)}
@@ -83,57 +75,45 @@ input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
 .hero-stat-label{font-size:9px;color:rgba(255,255,255,.4);font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
 .hero-stat-val{font-size:15px;font-weight:600;color:#fff}
 .hero-stat-val.lu{color:var(--lu)}.hero-stat-val.fran{color:var(--fran)}
-
-/* MONTHS */
 .month-row{display:flex;gap:5px;overflow-x:auto;margin-bottom:14px;scrollbar-width:none;padding-bottom:2px}
 .month-row::-webkit-scrollbar{display:none}
 .mchip{flex-shrink:0;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:none;font-size:12px;color:var(--muted);cursor:pointer;transition:all .15s;font-family:var(--font)}
 .mchip.on{background:var(--accent);color:#0f0f0f;border-color:var(--accent);font-weight:700}
 .mchip.has{border-color:var(--faint);color:var(--text)}
-
-/* MONTH SUMMARY */
 .month-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .msum-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px}
 .msum-label{font-size:10px;color:var(--muted);font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
 .msum-val{font-size:16px;font-weight:600}
 .msum-val.lu{color:var(--lu)}.msum-val.fran{color:var(--fran)}
-
-/* UPLOAD */
 .upload-section{margin-bottom:14px}
 .upload-title{font-size:11px;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .upload-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.upload-btn{border:1px dashed var(--border2);border-radius:var(--r-sm);padding:12px;text-align:center;cursor:pointer;background:var(--bg2);transition:all .2s}
+.upload-btn{border:1px dashed var(--border2);border-radius:var(--r-sm);padding:12px;text-align:center;cursor:pointer;background:var(--bg2);transition:all .2s;display:block}
 .upload-btn:active{border-color:var(--accent);background:rgba(245,200,66,.05)}
 .upload-btn input{display:none}
 .upload-btn-icon{font-size:20px;margin-bottom:4px}
 .upload-btn-text{font-size:12px;color:var(--muted)}
 .upload-btn-text b{color:var(--accent);display:block;font-size:11px;margin-top:2px}
-
-/* OCR PROGRESS */
-.ocr-progress{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:12px 14px;margin-bottom:14px;display:none}
-.ocr-progress.on{display:block}
-.ocr-bar-wrap{background:var(--bg3);border-radius:4px;height:4px;margin-top:8px;overflow:hidden}
-.ocr-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s;width:0%}
-.ocr-label{font-size:12px;color:var(--muted);font-family:var(--mono)}
-
-/* EXPENSES */
 .exp-list{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
-.exp-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px}
+/* Expense card — layout más claro */
+.exp-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px}
 .exp-item.imp{border-left:3px solid var(--fran)}
-.exp-r1{display:flex;gap:7px;margin-bottom:7px}
-.exp-desc{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 10px;color:var(--text);font-size:13px;outline:none}
+.exp-top{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+.exp-desc{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 10px;color:var(--text);font-size:13px;outline:none;min-width:0}
 .exp-desc:focus{border-color:var(--accent)}
-.exp-del{background:none;border:none;color:var(--faint);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;flex-shrink:0}
+.exp-del{background:none;border:none;color:var(--faint);font-size:22px;cursor:pointer;padding:0 2px;line-height:1;flex-shrink:0;margin-top:4px}
 .exp-del:active{color:var(--danger)}
-.exp-r2{display:grid;grid-template-columns:1fr 88px 64px;gap:6px}
-.exp-amt{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 9px;color:var(--text);font-size:13px;font-family:var(--mono);outline:none;width:100%}
+.exp-bottom{display:grid;grid-template-columns:1fr 100px 72px;gap:6px;align-items:center}
+.exp-amt{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 10px;color:var(--text);font-size:14px;font-family:var(--mono);font-weight:500;outline:none;width:100%}
 .exp-amt:focus{border-color:var(--accent)}
-.exp-who{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 5px;color:var(--text);font-size:12px;outline:none;cursor:pointer;width:100%}
-.exp-cuotas{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 5px;color:var(--text);font-size:12px;font-family:var(--mono);outline:none;width:100%;text-align:center}
-.btn-add{width:100%;padding:12px;background:none;border:1px dashed var(--border2);border-radius:var(--r-sm);color:var(--muted);font-size:13px;cursor:pointer;font-family:var(--font)}
+.exp-who{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 6px;color:var(--text);font-size:12px;outline:none;cursor:pointer;width:100%}
+.exp-who.lu{border-color:rgba(126,184,247,.4);background:#0e1f35}
+.exp-who.fran{border-color:rgba(130,217,168,.4);background:#0e2a1c}
+.exp-who.ambos{border-color:rgba(245,200,66,.3)}
+.exp-cuotas{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:8px 6px;color:var(--muted);font-size:11px;font-family:var(--mono);outline:none;width:100%;text-align:center}
+.exp-cuotas:focus{border-color:var(--accent)}
+.btn-add{width:100%;padding:13px;background:none;border:1px dashed var(--border2);border-radius:var(--r-sm);color:var(--muted);font-size:13px;cursor:pointer;font-family:var(--font);margin-top:4px}
 .btn-add:active{border-color:var(--accent);color:var(--accent)}
-
-/* GLOBAL */
 .global-year{display:flex;align-items:center;gap:10px;margin-bottom:18px}
 .yr-btn{background:none;border:1px solid var(--border2);border-radius:var(--r-sm);width:34px;height:34px;font-size:18px;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .yr-btn:active{border-color:var(--accent);color:var(--accent)}
@@ -154,27 +134,22 @@ input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
 .brow-name{font-size:13px;font-weight:500}
 .brow-nums{display:flex;gap:10px;font-size:12px;font-family:var(--mono)}
 .brow-lu{color:var(--lu)}.brow-fran{color:var(--fran)}.brow-tot{color:var(--muted)}
-
-/* TOAST */
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(16px);background:#1e1e1e;border:1px solid var(--border2);border-radius:var(--r-sm);padding:10px 18px;font-size:13px;opacity:0;transition:all .25s;pointer-events:none;z-index:999;white-space:nowrap;max-width:92vw;overflow:hidden;text-align:center}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.ok{border-color:var(--fran);color:var(--fran)}
 .toast.err{border-color:var(--danger);color:var(--danger)}
 .toast.warn{border-color:var(--accent);color:var(--accent)}
-
-/* OVERLAY */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:32px}
 .overlay.on{display:flex}
 .spin-lg{width:36px;height:36px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
 .overlay-msg{font-size:13px;color:var(--muted);font-family:var(--mono);text-align:center}
 .overlay-sub{font-size:11px;color:var(--faint);font-family:var(--mono);text-align:center}
-.overlay-bar-wrap{width:200px;background:var(--bg3);border-radius:4px;height:4px;overflow:hidden}
+.overlay-bar-wrap{width:200px;background:var(--bg3);border-radius:4px;height:4px;overflow:hidden;display:none}
 .overlay-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s;width:0%}
 </style>
 </head>
 <body>
 
-<!-- SETUP -->
 <div id="setup-screen">
   <div class="logo"><h1>Lu <span>&</span> Fran</h1><p>control de tarjetas</p></div>
   <div class="setup-card">
@@ -192,7 +167,6 @@ input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
   <p class="setup-note">¿No tenés la URL? Seguí las instrucciones del archivo Code.gs</p>
 </div>
 
-<!-- APP -->
 <div id="app">
   <div class="header">
     <div class="header-left"><h1>Lu <span>&</span> Fran</h1><div class="user-tag" id="user-tag"></div></div>
@@ -250,84 +224,83 @@ input,select,button{font-family:var(--font);font-size:14px;color:var(--text)}
   <div class="spin-lg"></div>
   <div class="overlay-msg" id="overlay-msg">Procesando...</div>
   <div class="overlay-sub" id="overlay-sub"></div>
-  <div class="overlay-bar-wrap" id="overlay-bar-wrap" style="display:none">
+  <div class="overlay-bar-wrap" id="overlay-bar-wrap">
     <div class="overlay-bar" id="overlay-bar"></div>
   </div>
 </div>
 <div class="toast" id="toast"></div>
 
 <script>
-// ── LIBRERÍAS EXTERNAS (cargadas bajo demanda) ────────────────────────────────
-const PDFJS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const PDFJS_URL     = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+const PDFJS_WORKER  = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 const TESSERACT_URL = 'https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.0.3/tesseract.min.js';
 
-// ── CONSTANTES ────────────────────────────────────────────────────────────────
-const CARDS = [
-  {id:'vg', key:'visa_galicia',   name:'Visa Galicia'},
-  {id:'mg', key:'master_galicia', name:'Master Galicia'},
-  {id:'vp', key:'visa_patagonia', name:'Visa Patagonia'}
-];
+const CARDS    = [{id:'vg',key:'visa_galicia',name:'Visa Galicia'},{id:'mg',key:'master_galicia',name:'Master Galicia'},{id:'vp',key:'visa_patagonia',name:'Visa Patagonia'}];
 const MONTHS   = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 const MONTHS_F = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
-// ── ESTADO ────────────────────────────────────────────────────────────────────
-let S = {
-  url:'', user:'',
-  year: new Date().getFullYear(),
-  month: {vg: new Date().getMonth(), mg: new Date().getMonth(), vp: new Date().getMonth()},
-  data: {}, dirty: false, lastSync: null
-};
+let S = {url:'',user:'',year:new Date().getFullYear(),month:{vg:new Date().getMonth(),mg:new Date().getMonth(),vp:new Date().getMonth()},data:{},dirty:false,lastSync:null};
 
-function md(k,y,m){ const key=`${k}_${y}_${m}`; if(!S.data[key]) S.data[key]={expenses:[]}; return S.data[key]; }
+function md(k,y,m){const key=`${k}_${y}_${m}`;if(!S.data[key])S.data[key]={expenses:[]};return S.data[key];}
 
-// ── CÁLCULOS ──────────────────────────────────────────────────────────────────
 function calcM(k,y,m){
   let lu=0,fr=0,tot=0;
   for(const e of md(k,y,m).expenses){
-    const a=parseFloat(e.amount)||0; tot+=a;
-    if(e.who==='Lu') lu+=a;
-    else if(e.who==='Fran') fr+=a;
-    else { lu+=a/2; fr+=a/2; }
+    const a=parseFloat(e.amount)||0;tot+=a;
+    if(e.who==='Lu')lu+=a;
+    else if(e.who==='Fran')fr+=a;
+    else{lu+=a/2;fr+=a/2;}
   }
-  return {lu,fr,tot};
+  return{lu,fr,tot};
 }
-function calcC(k,y){ let lu=0,fr=0,tot=0; for(let m=0;m<12;m++){const c=calcM(k,y,m);lu+=c.lu;fr+=c.fr;tot+=c.tot;} return {lu,fr,tot}; }
-function calcG(y){ let lu=0,fr=0,tot=0; for(const c of CARDS){const r=calcC(c.key,y);lu+=r.lu;fr+=r.fr;tot+=r.tot;} return {lu,fr,tot}; }
-function $n(n){ return '$'+Math.round(parseFloat(n)||0).toLocaleString('es-AR'); }
-function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+function calcC(k,y){let lu=0,fr=0,tot=0;for(let m=0;m<12;m++){const c=calcM(k,y,m);lu+=c.lu;fr+=c.fr;tot+=c.tot;}return{lu,fr,tot};}
+function calcG(y){let lu=0,fr=0,tot=0;for(const c of CARDS){const r=calcC(c.key,y);lu+=r.lu;fr+=r.fr;tot+=r.tot;}return{lu,fr,tot};}
+function $n(n){return'$'+Math.round(parseFloat(n)||0).toLocaleString('es-AR');}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
 
 // ── RENDER ────────────────────────────────────────────────────────────────────
+function whoClass(who){ return who==='Lu'?'lu':who==='Fran'?'fran':'ambos'; }
+
 function renderCard(cid){
-  const card=CARDS.find(c=>c.id===cid), year=S.year, m=S.month[cid];
-  const mc=calcM(card.key,year,m), cc=calcC(card.key,year), exp=md(card.key,year,m).expenses;
+  const card=CARDS.find(c=>c.id===cid),year=S.year,m=S.month[cid];
+  const mc=calcM(card.key,year,m),cc=calcC(card.key,year),exp=md(card.key,year,m).expenses;
   document.getElementById(`ct_${cid}`).textContent=$n(cc.tot);
   document.getElementById(`cl_${cid}`).textContent=$n(cc.lu);
   document.getElementById(`cf_${cid}`).textContent=$n(cc.fr);
+
   let chips='';
   for(let i=0;i<12;i++){
     const d=md(card.key,year,i),has=d.expenses.length>0,on=i===m?' on':'',h=has&&!on?' has':'';
     chips+=`<button class="mchip${on}${h}" onclick="setMonth('${cid}',${i})">${MONTHS[i]}</button>`;
   }
+
   let rows='';
   for(let i=0;i<exp.length;i++){
-    const e=exp[i], imp=e.imported?' imp':'';
-    rows+=`<div class="exp-item${imp}">
-      <div class="exp-r1">
-        <input class="exp-desc" type="text" value="${esc(e.desc||'')}" placeholder="Descripción" oninput="upd('${cid}','${card.key}',${year},${m},${i},'desc',this.value)"/>
+    const e=exp[i];
+    const imp=e.imported?' imp':'';
+    const wc=whoClass(e.who||'Ambos');
+    rows+=`
+    <div class="exp-item${imp}" id="ei_${cid}_${i}">
+      <div class="exp-top">
+        <input class="exp-desc" type="text" value="${esc(e.desc||'')}" placeholder="Descripción del gasto"
+          oninput="upd('${cid}','${card.key}',${year},${m},${i},'desc',this.value)"/>
         <button class="exp-del" onclick="del('${cid}','${card.key}',${year},${m},${i})">×</button>
       </div>
-      <div class="exp-r2">
-        <input class="exp-amt" type="number" value="${e.amount||''}" placeholder="0" min="0" oninput="upd('${cid}','${card.key}',${year},${m},${i},'amount',this.value);renderCard('${cid}')"/>
-        <select class="exp-who" onchange="upd('${cid}','${card.key}',${year},${m},${i},'who',this.value);renderCard('${cid}')">
-          <option value="Ambos"${e.who==='Ambos'?' selected':''}>Ambos</option>
-          <option value="Lu"${e.who==='Lu'?' selected':''}>Lu</option>
-          <option value="Fran"${e.who==='Fran'?' selected':''}>Fran</option>
+      <div class="exp-bottom">
+        <input class="exp-amt" type="number" value="${e.amount||''}" placeholder="0.00" min="0" step="0.01"
+          oninput="upd('${cid}','${card.key}',${year},${m},${i},'amount',this.value);renderCard('${cid}')"/>
+        <select class="exp-who ${wc}"
+          onchange="upd('${cid}','${card.key}',${year},${m},${i},'who',this.value);this.className='exp-who '+whoClass(this.value);renderCard('${cid}')">
+          <option value="Ambos"${(e.who||'Ambos')==='Ambos'?' selected':''}>👥 Ambos</option>
+          <option value="Lu"${e.who==='Lu'?' selected':''}>🔵 Lu</option>
+          <option value="Fran"${e.who==='Fran'?' selected':''}>🟢 Fran</option>
         </select>
-        <input class="exp-cuotas" type="text" value="${esc(e.cuotas||'')}" placeholder="1/1" oninput="upd('${cid}','${card.key}',${year},${m},${i},'cuotas',this.value)"/>
+        <input class="exp-cuotas" type="text" value="${esc(e.cuotas||'')}" placeholder="cuotas"
+          oninput="upd('${cid}','${card.key}',${year},${m},${i},'cuotas',this.value)"/>
       </div>
     </div>`;
   }
+
   document.getElementById(`body_${cid}`).innerHTML=`
     <div class="month-row">${chips}</div>
     <div class="month-sum">
@@ -341,7 +314,7 @@ function renderCard(cid){
         <label class="upload-btn" for="up_pdf_${cid}">
           <input type="file" id="up_pdf_${cid}" accept=".pdf,application/pdf" onchange="handlePDF(event,'${cid}','${card.key}',${year},${m})"/>
           <div class="upload-btn-icon">📄</div>
-          <div class="upload-btn-text">PDF<b>Subir PDF</b></div>
+          <div class="upload-btn-text">PDF<b>Subir PDF del resumen</b></div>
         </label>
         <label class="upload-btn" for="up_img_${cid}">
           <input type="file" id="up_img_${cid}" accept="image/*" capture="environment" onchange="handleIMG(event,'${cid}','${card.key}',${year},${m})"/>
@@ -355,12 +328,9 @@ function renderCard(cid){
 }
 
 function renderGlobal(){
-  const year=S.year, g=calcG(year);
+  const year=S.year,g=calcG(year);
   let brows='';
-  for(const c of CARDS){
-    const r=calcC(c.key,year);
-    brows+=`<div class="brow"><div class="brow-name">${c.name}</div><div class="brow-nums"><span class="brow-lu">${$n(r.lu)}</span><span class="brow-fran">${$n(r.fr)}</span><span class="brow-tot">${$n(r.tot)}</span></div></div>`;
-  }
+  for(const c of CARDS){const r=calcC(c.key,year);brows+=`<div class="brow"><div class="brow-name">${c.name}</div><div class="brow-nums"><span class="brow-lu">${$n(r.lu)}</span><span class="brow-fran">${$n(r.fr)}</span><span class="brow-tot">${$n(r.tot)}</span></div></div>`;}
   document.getElementById('body_gl').innerHTML=`
     <div class="global-year">
       <button class="yr-btn" onclick="chYear(-1)">&#8249;</button>
@@ -378,7 +348,7 @@ function renderGlobal(){
     <div class="breakdown">${brows}</div>`;
 }
 
-function renderAll(){ for(const c of CARDS) renderCard(c.id); renderGlobal(); }
+function renderAll(){for(const c of CARDS)renderCard(c.id);renderGlobal();}
 
 // ── ACCIONES ──────────────────────────────────────────────────────────────────
 function setTab(id,btn){
@@ -386,100 +356,122 @@ function setTab(id,btn){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
   document.getElementById(`panel_${id}`).classList.add('on');
   btn.classList.add('on');
-  if(id==='gl') renderGlobal();
+  if(id==='gl')renderGlobal();
 }
-function setMonth(cid,m){ S.month[cid]=m; renderCard(cid); }
-function chYear(d){ S.year+=d; renderAll(); }
-function upd(cid,cardKey,year,m,idx,field,val){
-  const d=md(cardKey,year,m);
-  if(d.expenses[idx]){ d.expenses[idx][field]=val; S.dirty=true; }
-}
-function addExp(cid,cardKey,year,m){
-  md(cardKey,year,m).expenses.push({desc:'',amount:'',who:'Ambos',cuotas:'',imported:false});
-  S.dirty=true; renderCard(cid);
-}
-function del(cid,cardKey,year,m,idx){
-  md(cardKey,year,m).expenses.splice(idx,1);
-  S.dirty=true; renderCard(cid);
-}
+function setMonth(cid,m){S.month[cid]=m;renderCard(cid);}
+function chYear(d){S.year+=d;renderAll();}
+function upd(cid,cardKey,year,m,idx,field,val){const d=md(cardKey,year,m);if(d.expenses[idx]){d.expenses[idx][field]=val;S.dirty=true;}}
+function addExp(cid,cardKey,year,m){md(cardKey,year,m).expenses.push({desc:'',amount:'',who:'Ambos',cuotas:'',imported:false});S.dirty=true;renderCard(cid);}
+function del(cid,cardKey,year,m,idx){md(cardKey,year,m).expenses.splice(idx,1);S.dirty=true;renderCard(cid);}
 
-// ── PARSER DE RESUMEN GALICIA ─────────────────────────────────────────────────
-// Formato: DD-MM-AA  DESCRIPCION  [CC/TT]  COMPROBANTE  MONTO  [DOLARES]
-function parseResumenLines(lines, cardKey, year, targetMonth){
-  // Regex para línea de consumo del resumen Galicia/Patagonia
-  // Fecha: DD-MM-AA o DD/MM/AA o DD-MM-AAAA
-  const ROW = /^(\d{2}[-\/]\d{2}[-\/]\d{2,4})\s+(.+?)\s+(?:\d{2}\/\d{2}\s+)?(\d{4,7})\s+([\d.,]+)\s*([\d.,]*)?\s*$/;
-  // También intentar formato más libre
-  const DATE_RX = /\b(\d{2})[-\/](\d{2})[-\/](\d{2,4})\b/;
-  const AMT_RX  = /([\d]{1,3}(?:\.\d{3})*,\d{2})/g; // formato argentino: 14.000,00
+// ── PARSER ESPECÍFICO GALICIA/PATAGONIA ───────────────────────────────────────
+// Formato real del resumen:
+// DD-MM-AA  [* o K]  DESCRIPCION  [CC/TT]  NROCOMPROBANTE  PESOS  [DOLARES]
+// PDF.js puede entregar las columnas como tokens separados, así que reconstruimos
+function parseResumen(rawText, cardKey, year, defaultMonth){
+  // Normalizar separadores
+  const text = rawText.replace(/\r/g,'');
+
+  // Regex principal: fecha al inicio de línea + captura el resto
+  // Acepta: 07-08-25, 07/08/25, 07-08-2025
+  const DATE = /^(\d{2})[-\/](\d{2})[-\/](\d{2,4})/;
+
+  // Monto en formato argentino: 7.388,66 o 258.447,46 o 3.490,00
+  const MONTO_ARG = /(\d{1,3}(?:\.\d{3})*,\d{2})/g;
+
+  // Cuotas: 09/09, 01/06, 03/03
+  const CUOTA_RX = /\b(\d{2})\/(\d{2})\b/;
 
   const monthMap = {'01':0,'02':1,'03':2,'04':3,'05':4,'06':5,'07':6,'08':7,'09':8,'10':9,'11':10,'12':11};
-  let added=0, skipped=0;
-  const d = md(cardKey, year, targetMonth);
 
-  for(const raw of lines){
+  // Estrategia: reconstruir líneas lógicas
+  // PDF.js a veces parte una fila en múltiples líneas de texto
+  // Agrupamos líneas consecutivas que no empiezan con fecha
+  const rawLines = text.split('\n');
+  const logicalLines = [];
+  let current = '';
+
+  for(const raw of rawLines){
     const line = raw.trim();
-    if(!line || line.length < 10) continue;
-    // saltar encabezados y totales
-    if(/fecha|referencia|comprobante|total\s+consumo|tarjeta\s+\d|saldo|pago\s+m[ií]nimo|vencimiento|titular/i.test(line)) continue;
-
-    // buscar fecha
-    const dm = line.match(DATE_RX);
-    if(!dm) continue;
-    const mm = dm[2].padStart(2,'0');
-    let mIdx = monthMap[mm] !== undefined ? monthMap[mm] : targetMonth;
-    // ajuste de año: si el mes del resumen es mayor al mes actual quizás es del año anterior
-    // pero simplemente confiamos en lo que viene
-
-    // buscar todos los montos en formato argentino en la línea
-    const amounts = [];
-    let match;
-    const rxCopy = new RegExp(AMT_RX.source, 'g');
-    while((match = rxCopy.exec(line)) !== null){
-      const val = parseFloat(match[1].replace(/\./g,'').replace(',','.'));
-      if(val >= 10) amounts.push({raw: match[1], val});
+    if(!line) continue;
+    if(DATE.test(line)){
+      if(current) logicalLines.push(current);
+      current = line;
+    } else {
+      // si la línea actual tiene fecha, la adjuntamos
+      if(current) current += ' ' + line;
     }
-    if(amounts.length === 0) continue;
+  }
+  if(current) logicalLines.push(current);
 
-    // el primer monto grande es pesos, el segundo (si existe) es dólares
-    const pesoAmt = amounts[0];
+  let added=0, skipped=0;
 
-    // descripción: lo que está entre la fecha y el primer número de comprobante grande
-    // quitamos la fecha, los montos y números de comprobante (6 dígitos seguidos)
+  for(const line of logicalLines){
+    const dm = line.match(DATE);
+    if(!dm) continue;
+
+    const mm = dm[2].padStart(2,'0');
+    const mIdx = monthMap[mm] !== undefined ? monthMap[mm] : defaultMonth;
+
+    // Encontrar todos los montos en la línea
+    const montos = [];
+    let mx;
+    const reCopy = new RegExp(MONTO_ARG.source, 'g');
+    while((mx=reCopy.exec(line))!==null){
+      const val = parseFloat(mx[1].replace(/\./g,'').replace(',','.'));
+      if(val >= 1) montos.push({raw:mx[1], val, idx:mx.index});
+    }
+    if(montos.length===0) continue;
+
+    // El primer monto es pesos (el más a la izquierda antes del posible monto en dólares)
+    // Si hay dos montos, el primero es pesos y el segundo dólares
+    const pesoMonto = montos[0];
+
+    // Cuotas: buscar patrón NN/NN que NO sea fecha
+    let cuotas = '';
+    const cuotaM = line.match(/\b(\d{2})\/(\d{2})\b/g);
+    if(cuotaM){
+      // filtrar la fecha del inicio
+      for(const c of cuotaM){
+        const [a,b] = c.split('/');
+        // si ambos son <= 12 podría ser fecha, pero cuotas suelen tener denominador > 1
+        if(parseInt(a)<=24 && parseInt(b)<=24 && !(a===dm[1]&&b===dm[2])){
+          cuotas = c; break;
+        }
+      }
+    }
+
+    // Descripción: sacar fecha, marcadores (* K), nro comprobante (6-7 dígitos solos), montos, cuotas
     let desc = line
-      .replace(DATE_RX,'')
-      .replace(/\b\d{6,7}\b/g,'')           // nro comprobante
-      .replace(/\b\d{2}\/\d{2}\b/g,'')      // cuotas tipo 01/06
-      .replace(new RegExp(rxCopy.source,'g'),'') // montos
-      .replace(/[*K\s]+/g,' ')
+      .replace(DATE,'')                          // quitar fecha
+      .replace(/\b[*K]\b/g,'')                   // quitar * y K
+      .replace(/\b\d{6,7}\b/g,'')               // quitar nro comprobante
+      .replace(new RegExp(MONTO_ARG.source,'g'),'') // quitar montos
+      .replace(/\b\d{2}\/\d{2}\b/g,'')          // quitar cuotas/fechas
+      .replace(/\s+/g,' ')
       .trim();
+
     if(!desc || desc.length < 2) desc = 'Consumo importado';
-    desc = desc.slice(0,50);
+    desc = desc.slice(0, 50);
 
-    // cuotas: buscar patrón DD/DD en la línea
-    const cuotaM = line.match(/\b(\d{2}\/\d{2})\b/);
-    const cuotas = cuotaM ? cuotaM[1] : '';
-
-    // dólares
-    const dolarAmt = amounts.length > 1 ? amounts[1].raw : '';
-
-    // chequear duplicado
-    const dup = d.expenses.some(e =>
-      Math.abs((parseFloat(e.amount)||0) - pesoAmt.val) < 1 &&
-      e.desc.toLowerCase().replace(/\s+/g,' ') === desc.toLowerCase().replace(/\s+/g,' ')
+    // Evitar duplicados
+    const bucket = md(cardKey, year, mIdx);
+    const dup = bucket.expenses.some(e =>
+      Math.abs((parseFloat(e.amount)||0) - pesoMonto.val) < 1 &&
+      e.desc.trim().toLowerCase() === desc.trim().toLowerCase()
     );
     if(dup){ skipped++; continue; }
 
-    md(cardKey, year, mIdx).expenses.push({
+    bucket.expenses.push({
       desc,
-      amount: String(pesoAmt.val),
+      amount: String(pesoMonto.val),
       who: 'Fran',
       cuotas,
-      dolares: dolarAmt,
       imported: true
     });
     added++;
   }
+
   return {added, skipped};
 }
 
@@ -489,150 +481,155 @@ async function loadPDFJS(){
   await new Promise((res,rej)=>{
     const s=document.createElement('script');
     s.src=PDFJS_URL;
-    s.onload=()=>{ pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS_WORKER; res(); };
+    s.onload=()=>{pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS_WORKER;res();};
     s.onerror=rej;
     document.head.appendChild(s);
   });
 }
 
-async function handlePDF(event, cid, cardKey, year, m){
-  const file = event.target.files[0]; if(!file) return;
+async function handlePDF(event,cid,cardKey,year,m){
+  const file=event.target.files[0];if(!file)return;
   event.target.value='';
-  showOverlay('Cargando PDF...','Esto puede tardar unos segundos',false);
+  showOverlay('Leyendo PDF...','Extrayendo texto del resumen',false);
   try{
     await loadPDFJS();
     const buf = await file.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({data: buf}).promise;
-    let fullText = '';
-    setOverlayMsg('Leyendo páginas...');
-    for(let p=1; p<=pdf.numPages; p++){
+    const pdf = await pdfjsLib.getDocument({data:buf}).promise;
+    let fullText='';
+
+    for(let p=1;p<=pdf.numPages;p++){
+      setOverlayMsg(`Procesando página ${p} de ${pdf.numPages}...`);
       const page = await pdf.getPage(p);
       const content = await page.getTextContent();
-      // reconstruir líneas agrupando items por posición Y
-      const items = content.items.map(i=>({str:i.str, y:Math.round(i.transform[5])}));
-      const byY = {};
+
+      // Reconstruir líneas agrupando por posición Y (misma fila = mismo Y aprox)
+      const items = content.items.map(i=>({
+        str: i.str,
+        x: Math.round(i.transform[4]),
+        y: Math.round(i.transform[5])
+      }));
+
+      // Agrupar por Y con tolerancia de ±3px
+      const rows = {};
       for(const it of items){
-        if(!byY[it.y]) byY[it.y]=[];
-        byY[it.y].push(it.str);
+        const yKey = Math.round(it.y / 4) * 4; // tolerar 4px
+        if(!rows[yKey]) rows[yKey]=[];
+        rows[yKey].push(it);
       }
-      const ys = Object.keys(byY).map(Number).sort((a,b)=>b-a);
-      for(const y of ys) fullText += byY[y].join(' ') + '\n';
+      // ordenar filas de arriba a abajo (Y mayor = más arriba en PDF)
+      const yKeys = Object.keys(rows).map(Number).sort((a,b)=>b-a);
+      for(const yk of yKeys){
+        // ordenar tokens de izquierda a derecha
+        rows[yk].sort((a,b)=>a.x-b.x);
+        const rowText = rows[yk].map(i=>i.str).join(' ').trim();
+        if(rowText) fullText += rowText + '\n';
+      }
     }
+
     hideOverlay();
-    const lines = fullText.split('\n');
-    const {added, skipped} = parseResumenLines(lines, cardKey, year, m);
+    console.log('Texto extraído del PDF:\n', fullText); // debug
+    const {added,skipped} = parseResumen(fullText, cardKey, year, m);
     S.dirty=true; renderCard(cid);
-    toast(`${added} gasto${added!==1?'s':''} importado${added!==1?'s':''} de Fran${skipped?' · '+skipped+' ya existían':''}`, added>0?'ok':'warn');
+    toast(`${added} gasto${added!==1?'s':''} importado${added!==1?'s':''} → Fran${skipped?' · '+skipped+' ya existían':''}`, added>0?'ok':'warn');
   }catch(e){
     hideOverlay();
     console.error(e);
-    toast('No se pudo leer el PDF: '+e.message,'err');
+    toast('Error al leer el PDF: '+e.message,'err');
   }
 }
 
-// ── LEER IMAGEN (OCR) ─────────────────────────────────────────────────────────
+// ── LEER IMAGEN OCR ───────────────────────────────────────────────────────────
 async function loadTesseract(){
   if(window.Tesseract) return;
   await new Promise((res,rej)=>{
     const s=document.createElement('script');
     s.src=TESSERACT_URL;
-    s.onload=res; s.onerror=rej;
+    s.onload=res;s.onerror=rej;
     document.head.appendChild(s);
   });
 }
 
-async function handleIMG(event, cid, cardKey, year, m){
-  const file = event.target.files[0]; if(!file) return;
+async function handleIMG(event,cid,cardKey,year,m){
+  const file=event.target.files[0];if(!file)return;
   event.target.value='';
-  showOverlay('Cargando Tesseract OCR...','Primera vez puede tardar ~30 seg',true);
+  showOverlay('Cargando OCR...','Primera vez tarda ~30 seg',true);
   try{
     await loadTesseract();
-    setOverlayMsg('Reconociendo texto...');
-    const worker = await Tesseract.createWorker('spa', 1, {
-      logger: p => {
+    setOverlayMsg('Reconociendo texto en la imagen...');
+    const worker = await Tesseract.createWorker('spa',1,{
+      logger: p=>{
         if(p.status==='recognizing text'){
           setOverlayProgress(Math.round(p.progress*100));
-          setOverlaySub(`Analizando imagen... ${Math.round(p.progress*100)}%`);
+          setOverlaySub(`Analizando... ${Math.round(p.progress*100)}%`);
         }
       }
     });
-    const { data: { text } } = await worker.recognize(file);
+    const {data:{text}} = await worker.recognize(file);
     await worker.terminate();
     hideOverlay();
-    const lines = text.split('\n');
-    const {added, skipped} = parseResumenLines(lines, cardKey, year, m);
+    console.log('Texto OCR:\n', text); // debug
+    const {added,skipped} = parseResumen(text, cardKey, year, m);
     S.dirty=true; renderCard(cid);
-    toast(`${added} gasto${added!==1?'s':''} importado${added!==1?'s':''} de Fran${skipped?' · '+skipped+' ya existían':''}`, added>0?'ok':'warn');
+    toast(`${added} gasto${added!==1?'s':''} importado${added!==1?'s':''} → Fran${skipped?' · '+skipped+' ya existían':''}`, added>0?'ok':'warn');
   }catch(e){
     hideOverlay();
     console.error(e);
-    toast('Error al procesar imagen: '+e.message,'err');
+    toast('Error al procesar la imagen: '+e.message,'err');
   }
 }
 
-// ── SYNC / API ────────────────────────────────────────────────────────────────
+// ── SYNC ──────────────────────────────────────────────────────────────────────
 async function apiLoad(){
-  if(!S.url) return;
+  if(!S.url)return;
   showOverlay('Cargando datos...','',false);
   try{
-    const res = await fetch(`${S.url}?action=load`);
-    const json = await res.json();
-    if(json.ok){ S.data=json.data||{}; S.dirty=false; S.lastSync=new Date(); updateSyncStatus(); renderAll(); toast('Sincronizado ✓','ok'); }
+    const res=await fetch(`${S.url}?action=load`);
+    const json=await res.json();
+    if(json.ok){S.data=json.data||{};S.dirty=false;S.lastSync=new Date();updateSyncStatus();renderAll();toast('Sincronizado ✓','ok');}
     else toast('Error: '+json.error,'err');
-  }catch(e){ toast('Error de conexión','err'); }
+  }catch(e){toast('Error de conexión','err');}
   hideOverlay();
 }
 
 async function apiSave(){
-  if(!S.url||!S.dirty) return true;
+  if(!S.url||!S.dirty)return true;
   showOverlay('Guardando...','',false);
   try{
-    const res = await fetch(S.url+'?action=save',{method:'POST',body:JSON.stringify(S.data)});
-    const json = await res.json();
+    const res=await fetch(S.url+'?action=save',{method:'POST',body:JSON.stringify(S.data)});
+    const json=await res.json();
     hideOverlay();
-    if(json.ok){ S.dirty=false; S.lastSync=new Date(); updateSyncStatus(); return true; }
-    else{ toast('Error al guardar','err'); return false; }
-  }catch(e){ hideOverlay(); toast('Error de conexión','err'); return false; }
+    if(json.ok){S.dirty=false;S.lastSync=new Date();updateSyncStatus();return true;}
+    else{toast('Error al guardar','err');return false;}
+  }catch(e){hideOverlay();toast('Error de conexión','err');return false;}
 }
 
 async function sync(){
   const btn=document.getElementById('sync-btn');
-  btn.querySelector? btn.classList.add('spinning') : btn.classList.add('spinning');
   btn.classList.add('spinning');
-  if(S.dirty){ const ok=await apiSave(); if(ok) toast('Guardado ✓','ok'); }
-  else { await apiLoad(); }
+  if(S.dirty){const ok=await apiSave();if(ok)toast('Guardado ✓','ok');}
+  else{await apiLoad();}
   btn.classList.remove('spinning');
 }
 
 function updateSyncStatus(){
   const el=document.getElementById('sync-status');
-  if(S.lastSync){ const t=S.lastSync; el.textContent=t.getHours()+':'+String(t.getMinutes()).padStart(2,'0'); }
+  if(S.lastSync){const t=S.lastSync;el.textContent=t.getHours()+':'+String(t.getMinutes()).padStart(2,'0');}
 }
 
-// auto-save cada 40 seg
-setInterval(async()=>{ if(S.dirty&&S.url) await apiSave(); }, 40000);
+setInterval(async()=>{if(S.dirty&&S.url)await apiSave();},40000);
 
 // ── SETUP ─────────────────────────────────────────────────────────────────────
 let selectedUser='';
-function selectUser(u,btn){
-  selectedUser=u;
-  document.querySelectorAll('.user-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');
-  checkReady();
-}
-function checkReady(){
-  const url=document.getElementById('url-input').value.trim();
-  document.getElementById('btn-go').disabled=!(url&&selectedUser);
-}
+function selectUser(u,btn){selectedUser=u;document.querySelectorAll('.user-btn').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');checkReady();}
+function checkReady(){const url=document.getElementById('url-input').value.trim();document.getElementById('btn-go').disabled=!(url&&selectedUser);}
 document.getElementById('url-input').addEventListener('input',checkReady);
 
 async function startApp(){
   const url=document.getElementById('url-input').value.trim();
-  if(!url||!selectedUser) return;
-  S.url=url; S.user=selectedUser;
+  if(!url||!selectedUser)return;
+  S.url=url;S.user=selectedUser;
   localStorage.setItem('cfg',JSON.stringify({url,user:selectedUser}));
-  showApp();
-  await apiLoad();
+  showApp();await apiLoad();
 }
 
 function showApp(){
@@ -643,41 +640,33 @@ function showApp(){
   tag.className='user-tag '+(S.user==='Lu'?'lu':'fran');
 }
 
-function logout(){
-  if(!confirm('¿Cerrar sesión y reconfigurar?')) return;
-  localStorage.removeItem('cfg');
-  location.reload();
-}
+function logout(){if(!confirm('¿Cerrar sesión y reconfigurar?'))return;localStorage.removeItem('cfg');location.reload();}
 
 // ── OVERLAY / TOAST ───────────────────────────────────────────────────────────
 function showOverlay(msg,sub,showBar){
   document.getElementById('overlay-msg').textContent=msg||'';
   document.getElementById('overlay-sub').textContent=sub||'';
-  const bw=document.getElementById('overlay-bar-wrap');
-  bw.style.display=showBar?'block':'none';
+  document.getElementById('overlay-bar-wrap').style.display=showBar?'block':'none';
   document.getElementById('overlay-bar').style.width='0%';
   document.getElementById('overlay').classList.add('on');
 }
-function setOverlayMsg(msg){ document.getElementById('overlay-msg').textContent=msg; }
-function setOverlaySub(msg){ document.getElementById('overlay-sub').textContent=msg; }
-function setOverlayProgress(pct){ document.getElementById('overlay-bar').style.width=pct+'%'; document.getElementById('overlay-bar-wrap').style.display='block'; }
-function hideOverlay(){ document.getElementById('overlay').classList.remove('on'); }
+function setOverlayMsg(m){document.getElementById('overlay-msg').textContent=m;}
+function setOverlaySub(m){document.getElementById('overlay-sub').textContent=m;}
+function setOverlayProgress(p){document.getElementById('overlay-bar').style.width=p+'%';document.getElementById('overlay-bar-wrap').style.display='block';}
+function hideOverlay(){document.getElementById('overlay').classList.remove('on');}
 
 let tTimer;
 function toast(msg,type=''){
   const t=document.getElementById('toast');
-  t.textContent=msg; t.className='toast on'+(type?' '+type:'');
-  clearTimeout(tTimer); tTimer=setTimeout(()=>t.classList.remove('on'),3500);
+  t.textContent=msg;t.className='toast on'+(type?' '+type:'');
+  clearTimeout(tTimer);tTimer=setTimeout(()=>t.classList.remove('on'),3500);
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 function init(){
   const cfg=localStorage.getItem('cfg');
   if(cfg){
-    try{
-      const {url,user}=JSON.parse(cfg);
-      if(url&&user){ S.url=url; S.user=user; showApp(); apiLoad(); return; }
-    }catch(e){}
+    try{const{url,user}=JSON.parse(cfg);if(url&&user){S.url=url;S.user=user;showApp();apiLoad();return;}}catch(e){}
   }
   document.getElementById('setup-screen').style.display='flex';
 }
